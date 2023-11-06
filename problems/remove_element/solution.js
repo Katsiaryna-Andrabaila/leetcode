@@ -4,9 +4,12 @@
  * @return {number}
  */
 const removeElement = (nums, val) => {
-  const arr = nums.filter((el) => el !== val);
-  nums.length = 0;
-  nums.push(...arr);
+  for (let i = 0; i < nums.length; i++) {
+      if (nums[i] === val) {
+          nums.splice(i, 1);
+          i--;
+      }
+  }
   
   return nums.length;
 };
